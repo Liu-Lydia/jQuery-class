@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      .wrap {
+        max-width: 800px;
+        height: 400px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .img-width {
+        width: 4000px;
+        position: absolute;
+        left: 0;
+        transition: 0.5s;
+      }
+
+      li img {
+        width: 100%;
+      }
+
+      .list-style {
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+      }
+
+      .list-style li {
+        width: 60px;
+        height: 10px;
+        margin: 5px;
+        border: 1px solid #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrap">
+        <ul class="img-width list-unstyled d-flex">
+          <li><img src="img/slide1.jpg" alt="" /></li>
+          <li><img src="img/slide2.jpg" alt="" /></li>
+          <li><img src="img/slide3.jpg" alt="" /></li>
+          <li><img src="img/slide4.jpg" alt="" /></li>
+          <li><img src="img/slide5.jpg" alt="" /></li>
+        </ul>
+
+        <ul class="list-unstyled list-style d-flex justify-content-center">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      let index = 0;
+      //$('.list-style li').first().css('background' , '#fff');
+      $(".list-style li").hover(function () {
+        console.log("hover", $(this).index()); //index()指的是上放li
+        //$('.list-style li').css('background' , 'none')
+
+        index = $(this).index();
+        $(this).css("background", "#fff").siblings().css("background", "none");
+        $(".img-width").css("left", -800 * index);
+      });
+
+      setInterval(() => {
+        if (index > 4) index = 0;
+        $(".list-style li")
+          .eq(index)
+          .css("background", "#fff")
+          .siblings()
+          .css("background", "none");
+        $(".img-width").css("left", -800 * index);
+        index++;
+      }, 1500);
+    </script>
+  </body>
+</html>
