@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <style>
+      .wrap {
+        width: 800px;
+        height: 400px;
+        background-color: antiquewhite;
+      }
+      .box {
+        width: 60px;
+        height: 60px;
+        background-color: aquamarine;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap position-relative mx-auto mt-2">
+      <div class="box"></div>
+    </div>
+
+    <div class="text-center">
+      <div class="py-1">
+        <button id="up" class="btn btn-info"></button>
+      </div>
+
+      <div>
+        <button id="left" class="btn btn-info mx-3"></button>
+        <button id="right" class="btn btn-info mx-3"></button>
+      </div>
+
+      <div class="py-1">
+        <button id="down" class="btn btn-info"></button>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(document).on("keydown", function (event) {
+        console.log("hi",event.which);
+
+           // 左鍵
+           if (event.which === 37) {
+                console.log('left', $('.box').css('left'))
+
+                $('.box').css({
+                    width: function (index, value) {
+                        return parseInt(value) * 2;
+                    },
+
+                    height: function () {
+
+                    }
+
+                });
+
+
+                console.log($('.box').css('left'))
+
+            }
+
+            // 右鍵
+            if (event.which === 39) {
+
+
+                if (parseInt($('.box').css('left')) < (680)) {
+                    $('.box').css('left', '+=20');
+                }
+
+                console.log('right', $('.box').css('left'))
+            }
+      });
+    </script>
+  </body>
+</html>

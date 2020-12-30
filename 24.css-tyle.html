@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+            transition: .5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <button class="btn btn-primary mr-2" id="get">get</button>
+        <button class="btn btn-primary" id="set">set</button>
+
+        <div class="box mt-2">321</div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        $('#get').on('click',function(){
+            let bcccolor = $('.box').css('background-color');
+            console.log('bcc=',bcccolor);
+            console.log('bcc=',typeof bcccolor);
+        });
+
+        $('#set').on('click',function(){
+            $('.box').css('background','#afa');
+        });
+
+        let newstyle = {
+            color : "white",
+            background : "#000",
+        }
+        $('.box').css(newstyle);
+
+    </script>
+
+</body>
+</html>

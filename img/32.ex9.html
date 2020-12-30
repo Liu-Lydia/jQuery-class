@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+        .fontS {
+            font-size: 0.8rem;
+        }
+
+        .fontM {
+            font-size: 1rem;
+        }
+
+        .fontL {
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="py-2 d-flex justify-content-end">
+            <div class="btn-group">
+                <button class="btn btn-info ">S</button>
+                <button class="btn btn-info active ">M</button>
+                <button class="btn btn-info ">L</button>
+            </div>
+        </div>
+
+        <h2>jQuery</h2>
+        <article>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero quisquam maiores repudiandae quibusdam,
+                quasi ducimus esse animi reprehenderit ut ad odio laborum perferendis at aperiam, corporis eligendi.
+                Dicta, fuga doloribus.</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad aliquam, atque, quas minus cum maxime
+                possimus, aperiam vel voluptate perspiciatis veniam! Illo et qui tenetur, odio eveniet libero ex nulla.
+            </p>
+        </article>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        $('.btn').on('click', function () {
+            console.log($(this).is(":contains('S')"))
+
+            $('.btn').removeClass('active');
+            $(this).addClass('active');
+
+
+            if ($(this).is(":contains('S')")) {
+                $('article').removeClass();
+                $('article').addClass('fontS')
+            }
+
+            if ($(this).is(":contains('M')")) {
+                $('article').removeClass();
+                $('article').addClass('fontM')
+            }
+
+            if ($(this).is(":contains('L')")) {
+                $('article').removeClass();
+                $('article').addClass('fontL')
+            }
+        });
+
+    </script>
+</body>
+
+</html>
