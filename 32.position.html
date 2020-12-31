@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+body{
+    margin: 0;
+}
+.wrap{
+    width: 600px;
+    height: 200px;
+    background-color: antiquewhite;
+    padding: 50px;
+    margin: 20px;
+}
+.box{
+    width: 100px;
+    height: 100px;
+    background-color:red;
+    padding: 80px;
+    margin: 60px;
+}
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        console.log('box:',$('.box').position())
+        console.log('box:',$('.box').offset())
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        height: 300vh;
+        background-color: antiquewhite;
+      }
+
+      .box {
+        width: 30px;
+        height: 30px;
+        border: 5px solid rgb(191, 240, 199);
+        border-radius: 50%;
+        left: 0;
+        top: 0;
+        position: fixed;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(document).mousemove(".box", function (e) {
+        console.log("box:", e.clientX, e.clientY);
+
+        setTimeout(function () {
+          $(".box").css({ left: e.clientX, top: e.clientY });
+        }, 100);
+      });
+    </script>
+  </body>
+</html>
