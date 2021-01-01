@@ -15,15 +15,15 @@
       body {
         height: 300vh;
       }
-      .navbar{
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          transition: .5s;
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        transition: 0.5s;
       }
-      .hide_nav{
-          transform: translateY(-100px);
+      .hide_nav {
+        transform: translateY(-100px);
       }
     </style>
   </head>
@@ -101,17 +101,23 @@
       crossorigin="anonymous"
     ></script>
     <script>
-        let scrollLast = 0
+      let scrollLast = 0;
       $(window).scroll(function () {
-        let scrollNow = $("navbar").scrollTop();
+        let scrollNow = $(this).scrollTop();
+        console.log("scrollnow:", scrollNow);
+        console.log("scrolllast:", scrollLast);
 
-        if(scrollNow){
-
-        }else{
-
+        if (scrollNow <= 300) {
+          $(".navbar").removeClass("hide_nav");
+        } else {
+          if (scrollLast < scrollNow) {
+            $(".navbar").addClass("hide_nav");
+          } else {
+            $(".navbar").removeClass("hide_nav");
+          }
         }
 
-        scrollLast = scrollTop;
+        scrollLast = scrollNow;
       });
     </script>
   </body>

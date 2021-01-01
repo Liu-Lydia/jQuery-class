@@ -13,8 +13,8 @@ body{
     width: 600px;
     height: 200px;
     background-color: antiquewhite;
-    padding: 50px;
-    margin: 20px;
+    padding: 60px 10px;
+    margin: 50px;
 }
 .box{
     width: 100px;
@@ -33,8 +33,8 @@ body{
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script>
-        console.log('box:',$('.box').position())
-        console.log('box:',$('.box').offset())
+        console.log('box:',$('.box').position())//只看父層m.p
+        console.log('box:',$('.box').offset())//相對window距離
     </script>
 </body>
 </html>

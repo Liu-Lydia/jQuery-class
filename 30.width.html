@@ -24,16 +24,16 @@
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script>
         console.log('width:',$('.box').width());
-        console.log('height:',$('.box').height());
+        console.log('height:',$('.box').height());//扣掉p.b
 
         console.log('innerWidth:',$('.box').innerWidth());
-        console.log('innerHeight:',$('.box').innerHeight());
+        console.log('innerHeight:',$('.box').innerHeight());//扣掉b
 
         console.log('outerWidth:',$('.box').outerWidth());
-        console.log('outerHeight:',$('.box').outerHeight());
+        console.log('outerHeight:',$('.box').outerHeight());//p.b也包含在box內
 
         console.log('outerWidth:',$('.box').outerWidth(true));
-        console.log('outerHeight:',$('.box').outerHeight(true));
+        console.log('outerHeight:',$('.box').outerHeight(true));//包含m
     </script>
 </body>
 </html>
