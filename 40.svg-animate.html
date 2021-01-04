@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .circle{
+            stroke-dasharray: 1194;
+            stroke-dashoffset: 1194;
+        }
+
+        .circle.active{
+            animation:circle .8s ease-in-out;
+            animation-fill-mode: forwards;
+        }
+
+        .tick{
+            stroke-dasharray: 350;
+            stroke-dashoffset: 350;
+        }
+
+        .tick.active{
+            animation:tick 1s ease-in-out;
+            animation-fill-mode: forwards;
+            animation-delay: .8s;
+        }
+
+        @keyframes circle {
+            from{
+                stroke-dashoffset: 1194;
+            }
+            to{
+                stroke-dashoffset: 2388;
+            }
+        }
+
+        @keyframes tick {
+            from{
+                stroke-dashoffset: 350;
+            }
+            to{
+                stroke-dashoffset: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <svg width="400" height="400">
+        <circle cx="200" cy="200" r="190" stroke-width="20" stroke="green" fill="none" class="circle" transform="rotate(-90 200 200)" stroke-linecap="round"/>
+        <polyline stroke="green" stroke-width="20" points="100,200 200,300 300,126" fill="none" stroke-linecap="round" stroke-linejoin="round" class="tick"/>
+    </svg>
+    <button>click</button>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        $('button').on('click',function(){
+            $('.circle').toggleClass('active')
+            $('.tick').toggleClass('active')
+        });
+    </script>
+</body>
+</html>
