@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var vm = "global";
+
+        function callName() {
+            console.log('2', this.vm);
+        }
+
+        //IIFE
+        (function () {
+            let vm = "local";
+            console.log('2', this.vm);
+
+            function callSomeone() {
+                console.log('3', this.vm);
+            }
+
+            callSomeone();
+        })();
+    </script>
+</body>
+
+</html>

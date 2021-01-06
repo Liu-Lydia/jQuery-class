@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // hoist 提升
+
+
+        // Scope
+        let x = 10;
+
+        const r = function () {
+            x--; // x = 9;
+            console.log('abc', x);
+        }
+
+        function cons() {
+            console.log('x', x);
+        }
+
+        cons();
+        r();
+        r();
+        cons();
+
+        // console.log('x', x);
+
+    </script>
+</body>
+
+</html>
